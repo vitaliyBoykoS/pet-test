@@ -9,8 +9,11 @@
   hosts: app_server
   become: yes
   tasks:
-- name: installing ...
-  yum: name=maven state=latest
+- name: Install maven
+  hosts: maven
+  become: true
+  roles:
+    - maven
 - name: Run petclinic
   hosts: app_server
   become: yes
