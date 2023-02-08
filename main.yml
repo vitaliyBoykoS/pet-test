@@ -11,14 +11,6 @@
   tasks:
 - name: installing ...
   yum: name=maven state=latest
-- name: Copy Snapshot
-  hosts: app_server
-  become: yes
-  tasks:
-    - name: copying ...
-      copy:
-        src: /var/lib/jenkins/workspace/petclinic/target/spring-petclinic-2.1.0.BUILD-SNAPSHOT.jar
-        dest: /home/jenkins/snapshot.jar
 - name: Run petclinic
   hosts: app_server
   become: yes
