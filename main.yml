@@ -5,15 +5,6 @@
   tasks:
     - name: installing ...
       yum: name=java-1.8.0-openjdk.x86_64 state=latest
-- name: Install Maven
-  hosts: app_server
-  become: yes
-  tasks:
-- name: Install maven
-  hosts: maven
-  become: true
-  roles:
-    - maven
 - name: Run petclinic
   hosts: app_server
   become: yes
